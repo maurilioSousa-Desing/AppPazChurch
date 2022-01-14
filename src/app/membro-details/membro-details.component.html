@@ -1,0 +1,26 @@
+<div *ngIf="membro">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cpf</th>
+                <th scope="col">Ativo</th>
+                <th scope="col">Operção</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{membro.id}}</td>
+                <td>{{membro.nome}}</td>
+                <td>{{membro.cpf}}</td>
+                <td>{{membro.ativo}}</td>
+                <td><span class="button is-small btn-primary" *ngIf='membro.ativo' (click)='updateAtivo(false)'>Inativar</span>
+
+                    <span class="button is-small btn-primary" *ngIf='!membro.ativo' (click)='updateAtivo(true)'>Ativar</span> {{' '}}
+                    <span class="button is-small btn-danger" (click)='deletarMembro()'>Delete</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr/>
+</div>
