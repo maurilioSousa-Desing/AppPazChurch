@@ -1,0 +1,18 @@
+<h4>Pesquisar Membros pelo CPF!
+</h4>
+<div style="width: 300px;">
+    <form (ngSubmit)="onSubmit">
+        <div class="form-group">
+            <label for="lastname">CPF</label>
+            <input type="text" class="form-control" id="cpf" required [(ngModel)]="cpf" name="cpf" placeholder="000.000.000-00">
+        </div>
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-success">Pesquisar</button> </div>
+    </form>
+</div>
+<ul>
+    <li *ngFor="let membro of membros">
+        <h3>{{membro.id}} - {{membro.nome}} - {{membro.cpf}}</h3>
+    </li>
+</ul>
