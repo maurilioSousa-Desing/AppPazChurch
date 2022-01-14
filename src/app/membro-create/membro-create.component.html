@@ -1,0 +1,21 @@
+<h4>Novo Membro</h4>
+<div [hidden]="submitted" style="width: 300px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" required [(ngModel)]="membro.nome" name="nome">
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">Cpf</label>
+            <input type="text" class="form-control" id="cpf" required [(ngModel)]="membro.cpf" name="cpf" placeholder="000.000.000-00">
+        </div>
+
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>O cadastro do Cliente foi realizado com sucesso!</h4>
+    <button class="btn btn-success" (click)="novoCadastro()">Novo Cadastro</button>
+</div>
