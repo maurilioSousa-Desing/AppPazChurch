@@ -1,0 +1,8 @@
+<h4>Lista de Membros</h4>
+<div *ngFor="let membro of membros | async" style="width: 300px;">
+    <app-membro-details [membro]='membro'></app-membro-details>
+</div>
+
+<div>
+    <button type="button" class="btn btn-danger" (click)='deleteTodosMembros()'>Delete Todos Membros</button>
+</div>
